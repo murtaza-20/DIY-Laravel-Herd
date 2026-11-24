@@ -1,0 +1,16 @@
+# Binaries
+/herd
+*.exe
+*.test
+
+# Go
+/vendor/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Local fixtures runtime
+scripts/fixtures/

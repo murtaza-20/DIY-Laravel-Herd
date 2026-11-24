@@ -1,0 +1,16 @@
+[Unit]
+Description=DIY Herd daily start (DB + dashboard)
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Environment=HERD_EXTRAS=1
+Environment=HERD_OPEN_DASHBOARD=1
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=%h/Code/diy-herd/scripts/herd-daily-start.sh
+ExecStop=%h/Code/diy-herd/scripts/herd-daily-stop.sh
+
+[Install]
+WantedBy=default.target

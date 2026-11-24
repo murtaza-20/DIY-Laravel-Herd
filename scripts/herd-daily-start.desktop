@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=DIY Herd Daily Start
+Comment=Start Herd databases and dashboard
+Exec=env HERD_EXTRAS=0 HERD_OPEN_DASHBOARD=0 /home/murtaza-amravatiwala/Code/diy-herd/scripts/herd-daily-start.sh
+Terminal=false
+X-GNOME-Autostart-enabled=true
+Categories=Development;

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ubuntu Herd</title>
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <header class="top">
+    <div class="brand">
+      <span class="mark">H</span>
+      <div>
+        <h1>Ubuntu Herd</h1>
+        <p class="tag">Local PHP stack · dashboard</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="btn-refresh" type="button">Refresh</button>
+      <button id="btn-nginx" type="button" class="ghost">Reload Nginx</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-strip">
+      <div>
+        <p class="eyebrow">Status</p>
+        <p id="summary" class="summary">Loading…</p>
+      </div>
+      <p id="herd-dir" class="muted"></p>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Sites</h2>
+        <p>Registered projects on <code>.test</code></p>
+      </div>
+      <div id="sites" class="list"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>PHP</h2>
+        <p>Installed versions and FPM sockets</p>
+      </div>
+      <div id="php" class="grid"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Databases</h2>
+        <p>Docker MySQL / Postgres / Redis (<code>herd db start</code>)</p>
+      </div>
+      <div id="databases" class="grid"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Extras</h2>
+        <p>Mailhog · phpMyAdmin · MinIO (<code>herd extras start</code>)</p>
+      </div>
+      <div id="extras" class="grid"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Queue workers</h2>
+        <p>Laravel workers (<code>herd queue work &lt;site&gt;</code>)</p>
+      </div>
+      <div id="queues" class="list"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Services</h2>
+        <p>Systemd units Herd relies on</p>
+      </div>
+      <div id="services" class="grid"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Logs</h2>
+        <p>Tail of <code>~/.herd/logs/&lt;service&gt;.log</code></p>
+      </div>
+      <div class="log-bar">
+        <input id="log-service" value="nginx" placeholder="service name" />
+        <button id="btn-logs" type="button">Load</button>
+      </div>
+      <pre id="log-view" class="log">Select a service to view logs.</pre>
+    </section>
+  </main>
+
+  <footer>
+    <span id="foot-meta"></span>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>
